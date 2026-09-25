@@ -1,6 +1,5 @@
-
-import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Estoque {
@@ -24,13 +23,36 @@ public class Estoque {
             }
         }
         if (existe) {
-
-        }else{
+        } else {
             System.out.println("adicionar");
-                produtos.add(produto);
+            produtos.add(produto);
         }
+    }
+
+    public Produto buscarProduto(int codigo) {
+        for (Produto produto : produtos) {
+            if (produto.getCodigo() == codigo) {
+                return produto;
+            }
+        }
+        return null;
+    }
+
+    public void listarProdutosCadastrados() {
+        for (Produto p : produtos) {
+            System.out.println(p);
+
+        }
+    }
+
+    public void adicionarEstoque(int codigo, int quantidade) {
+        Produto produto = buscarProduto(codigo);
+        produto.setQuantidade(quantidade + produto.getQuantidade());
+        System.out.println(produto.getQuantidade());
+
 
     }
+
 
 }
 

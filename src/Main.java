@@ -13,8 +13,17 @@ public class Main {
         estoque.adicionarProduto(produto1);
         estoque.adicionarProduto(produto2);
         estoque.adicionarProduto(produto3);
-        estoque.adicionarProduto(produto);
-        estoque.adicionarProduto(produto2);
+
+        Produto encontrado = estoque.buscarProduto(4044);
+        System.out.println(encontrado);
+
+         Produto encontrado1 = estoque.buscarProduto(404);
+        System.out.println(encontrado1);
+
+        estoque.listarProdutosCadastrados();
+
+        estoque.adicionarEstoque(1999, 34);
+
 
     }
 }
