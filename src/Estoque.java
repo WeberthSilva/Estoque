@@ -47,12 +47,42 @@ public class Estoque {
 
     public void adicionarEstoque(int codigo, int quantidade) {
         Produto produto = buscarProduto(codigo);
-        produto.setQuantidade(quantidade + produto.getQuantidade());
-        System.out.println(produto.getQuantidade());
-
-
+        if (produto == null) {
+            System.out.println("Produto nao encontrado");
+        } else {
+            if (quantidade < 0) {
+                System.out.println("Quantidade invalida ");
+            } else {
+                produto.setQuantidade(quantidade + produto.getQuantidade());
+                System.out.println(produto.getQuantidade());
+            }
+        }
     }
 
+    public void removerEStoque(int codigo, int quantidade) {
+        Produto produto = buscarProduto(codigo);
+        if (produto == null) {
+            System.out.println("Produto nao encontrado");
+        } else {
+            if (quantidade > produto.getQuantidade()) {
+                System.out.println("quantidade no estoque insuficiente");
+            } else {
+                if (quantidade < 0) {
+                    System.out.println("Quantidade invalida ");
+                } else {
+                    produto.setQuantidade(produto.getQuantidade() - quantidade);
+                    System.out.println(produto.getQuantidade());
+                }
+            }
+
+        }
+    }
 
 }
+
+
+
+
+
+
 

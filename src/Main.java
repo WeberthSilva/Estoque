@@ -22,7 +22,9 @@ public class Main {
 
         estoque.listarProdutosCadastrados();
 
-        estoque.adicionarEstoque(1999, 34);
+        estoque.adicionarEstoque(101, 10 );
+
+        estoque.removerEStoque(101, 5);
 
 
     }
